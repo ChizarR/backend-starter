@@ -76,7 +76,7 @@ describe('CRUD Messages endpoint', () => {
       .get(`/message/${message._id}`)
       .send()
       .set('token', token)
-    expect(response.body.text).toBe(message.text)
+    expect(response.body.author.id).toBe(author.id)
     expect(response.body.text).toBe(message.text)
   })
 
